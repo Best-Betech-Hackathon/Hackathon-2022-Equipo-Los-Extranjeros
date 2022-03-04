@@ -1,4 +1,4 @@
-#Hackathon-2022-Equipo-Los-Extranjeros
+# Hackathon-2022-Equipo-Los-Extranjeros
 
 Greetings! We are Sergeant Rodrigo and Sergeant Bayron, commanders of the great army known as the Rebellion, we are delighted to have foreigners to bring in some fresh ideas.
 
