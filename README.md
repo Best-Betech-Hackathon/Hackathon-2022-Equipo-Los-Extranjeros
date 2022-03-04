@@ -12,5 +12,4 @@ In milestone 2 it is especially important that you are doing the construction li
 
 Go for it!
 
-Translated with www.DeepL.com/Translator (free version)
 
