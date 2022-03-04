@@ -1,13 +1,15 @@
-# Hackathon-2022-Equipo-Los-Extranjeros
-¡Saludos! Somos el sargento Rodrigo y el sargento Bayron, comandantes de la gran armada conocida como la Rebelión, estamos encantados de contar con vosotros Extranjeros.
+#Hackathon-2022-Team-The-Extraders Team
+Greetings! We are Sergeant Rodrigo and Sergeant Bayron, commanders of the great army known as the Rebellion, we are delighted to have foreigners to bring in some fresh ideas.
 
-**En este repositorio podréis ir subiendo vuestro progreso.**
+**In this repository you will be able to upload your progress.
 
-El **Hito 1** está destinado al aprendizaje y a la familiarización con la plataforma por lo que la entrega de vuestras soluciones es opcional.
+Milestone 1** is intended for learning and familiarization with the platform so the delivery of your solutions is optional.
 
-Para el **hito 2** la entrega es obligatoria.
+For **Milestone 2** the delivery is mandatory.
 
-En el hito 2 es especialmente importante que vayais haciendo la construccion poco a poco y que veamos que vais haciendo varios comits. En este caso es necesario que cada comit tenga una breve informacion de lo que se ha hecho en ese comit en el apartado de descripcion(se debe rellenar antes de hacer el comit). De este modo el jurado podra ver el progreso y la estrategia seguida en el desarrollo.
+In milestone 2 it is especially important that you are doing the construction little by little and that we see that you are doing several comits. In this case it is necessary that each comit has a brief information of what has been done in that comit in the description section (to be filled in before making the comit). This way the jury will be able to see the progress and the strategy followed in the development.
 
-¡A por ello!
+Go for it!
+
+Translated with www.DeepL.com/Translator (free version)
 
