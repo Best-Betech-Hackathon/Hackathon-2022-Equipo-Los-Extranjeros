@@ -2,9 +2,9 @@
 
 Greetings! We are Sergeant Rodrigo and Sergeant Bayron, commanders of the great army known as the Rebellion, we are delighted to have foreigners to bring in some fresh ideas.
 
-**In this repository you will be able to upload your progress.
+**In this repository you will be able to upload your progress.**
 
-Milestone 1** is intended for learning and familiarization with the platform so the delivery of your solutions is optional.
+**Milestone 1** is intended for learning and familiarization with the platform so the delivery of your solutions is optional.
 
 For **Milestone 2** the delivery is mandatory.
 
