@@ -1,5 +1,5 @@
 # Hackathon-2022-Equipo-Los-Extranjeros
-¡Saludos! Somos el sargento Rodrigo y el sargento Bayron, comandantes de la gran armada conocida como la Rebelión, necesitamos a las mejores mentes para ayudarnos a ganar esta pronta lucha contra los tanques extraterrestres. Sin embargo no podemos vencerlos solos.
+¡Saludos! Somos el sargento Rodrigo y el sargento Bayron, comandantes de la gran armada conocida como la Rebelión, estamos encantados de contar con vosotros Extranjeros.
 
 **En este repositorio podréis ir subiendo vuestro progreso.**
 
