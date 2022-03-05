@@ -14,10 +14,38 @@ tank.init(function(settings, info) {
   turnTimer = Math.round(Math.randomRange(0, 30));
 });
 
+function shooter(state,control){
+  if(!state.radar.enemy) {
+    control.RADAR_TURN = 1;
+  } else {
+    // find target angle to aim the enemy
+    var targetAngle = Math.deg.atan2(
+      state.radar.enemy.y - state.y,
+      state.radar.enemy.x - state.x
+    );
+
+    var radarAngleDelta = Math.deg.normalize(targetAngle - (state.radar.angle + state.angle));
+
+    // adjust radar direction to follow the target
+    control.RADAR_TURN = radarAngleDelta*0.2;
+
+    var gunAngleDelta = Math.deg.normalize(targetAngle - (state.gun.angle + state.angle));
+
+    // adjust radar direction to follow the target
+    control.GUN_TURN = gunAngleDelta * 0.2;
+
+    if(Math.abs(gunAngleDelta) < 3) { // gun aimed at the target
+      control.SHOOT = power;
+    }
+    control.DEBUG = "power=" + power.toFixed(2);
+  }
+}
+
 // randomly change direction of movement
 function changeAvoidDirection() {
   avoidDirection = Math.random() > 0.5 ? -1 : 1;
 }
+
 
 function detectAndAvoidWalls(state,control)
 {
@@ -139,5 +167,5 @@ tank.loop(function(state, control) {
   var _detectedWalls = detectAndAvoidWalls(state,control);
   if(_detectedWalls)
     return;
-  var _dodgeBullets = dodgeBullets(state,control);
+  shooter(state,control);
 });
