@@ -5,38 +5,31 @@ var bulletMap;
 
 var turnTimer,avoidDirection;
 
+var verticalAngle;
+var horizontalAngle,shootAngle,timer = 0;
+
+
 // initialize your tank
 tank.init(function(settings, info) {
   bulletMap = [];
   changeAvoidDirection();
   turnTimer = Math.round(Math.randomRange(0, 30));
+
+  verticalAngle = Math.random() < 0.5 ? -90 : +90;
+  horizontalAngle = Math.random() < 0.5 ? 0 : -180;
+  // find direction that is opposite to the corner where the tank is
+  shootAngle = Math.deg.normalize(verticalAngle + horizontalAngle)/2;
+  if(horizontalAngle == 0) {
+    shootAngle += 180;
+  }
+
 });
 
 function shooter(state,control){
-  if(!state.radar.enemy) {
-    control.RADAR_TURN = 1;
-  } else {
-    // find target angle to aim the enemy
-    var targetAngle = Math.deg.atan2(
-      state.radar.enemy.y - state.y,
-      state.radar.enemy.x - state.x
-    );
-
-    var radarAngleDelta = Math.deg.normalize(targetAngle - (state.radar.angle + state.angle));
-
-    // adjust radar direction to follow the target
-    control.RADAR_TURN = radarAngleDelta*0.2;
-
-    var gunAngleDelta = Math.deg.normalize(targetAngle - (state.gun.angle + state.angle));
-
-    // adjust radar direction to follow the target
-    control.GUN_TURN = gunAngleDelta * 0.2;
-
-    if(Math.abs(gunAngleDelta) < 3) { // gun aimed at the target
-      control.SHOOT = power;
-    }
-    control.DEBUG = "power=" + power.toFixed(2);
-  }
+  var angleDelta = Math.deg.normalize(shootAngle + 20*Math.sin(timer*0.1) - state.angle);
+  control.TURN = angleDelta * 0.2;
+  control.SHOOT = 0.1;
+  control.DEBUG.strategy = "shootStrategy:" + shootAngle;
 }
 // randomly change direction of movement
 function changeAvoidDirection() {
@@ -46,6 +39,7 @@ function detectAndAvoidWalls(state,control)
 {
 	if(state.collisions.wall || state.collisions.enemy || state.collisions.ally) {
     turnTimer = Math.round(Math.randomRange(20, 50));
+    control.DEBUG =  "collision";
   }
   if(turnTimer > 0) {
     turnTimer--;
@@ -160,4 +154,5 @@ function dodgeBullets(state,control)
 tank.loop(function(state, control) {
   dodgeBullets(state,control);
   detectAndAvoidWalls(state,control);
+  shooter(state,control);
 });
