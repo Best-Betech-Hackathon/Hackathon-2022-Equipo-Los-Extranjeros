@@ -2,9 +2,7 @@ importScripts('lib/tank.js');
 
 // keep information about all bullets that was spot
 var bulletMap;
-// avoid bullets by movement in random direction.
-// avoidDirection = 1: move forward
-// avoidDirection = -1: move backward
+
 var turnTimer,avoidDirection;
 
 // initialize your tank
@@ -40,13 +38,10 @@ function shooter(state,control){
     control.DEBUG = "power=" + power.toFixed(2);
   }
 }
-
 // randomly change direction of movement
 function changeAvoidDirection() {
   avoidDirection = Math.random() > 0.5 ? -1 : 1;
 }
-
-
 function detectAndAvoidWalls(state,control)
 {
 	if(state.collisions.wall || state.collisions.enemy || state.collisions.ally) {
@@ -163,9 +158,6 @@ function dodgeBullets(state,control)
   }
 }
 tank.loop(function(state, control) {
-  
-  var _detectedWalls = detectAndAvoidWalls(state,control);
-  if(_detectedWalls)
-    return;
-  shooter(state,control);
+  dodgeBullets(state,control);
+  detectAndAvoidWalls(state,control);
 });
